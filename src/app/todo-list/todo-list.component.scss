@@ -1,0 +1,151 @@
+@import "../app.colors";
+
+li {
+  list-style: none;
+}
+
+.addForm {
+  font-size: 0;
+}
+
+.addForm__input {
+  height: 34px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+  font-size: 15px;
+  color: $light-blue;
+}
+
+.addForm__input-text {
+  width: calc(100% - 70px);
+  margin-right: 5px;
+  display: inline-block;
+  border: 2px solid $light-blue;
+  padding: 0 12px;
+  outline: none;
+}
+
+.addForm__input-submit,
+.todoList__item-remove {
+  width: 65px;
+  display: inline-block;
+  background-color: $light-blue;
+  color: $white;
+  transition: .15s opacity ease-in-out;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+    opacity: .8;
+  }
+}
+
+.todoListWrap {
+  margin-top: 40px;
+  padding: 13px;
+  background-color: $white;
+  border: 2px solid $light-blue;
+}
+
+.todoList {
+  max-height: 182px;
+  overflow: auto;
+  margin-top: 20px;
+  padding-right: 8px;
+
+  & .todoList__item {
+    padding-bottom: 5px;
+    margin: 10px 0 5px;
+    border-bottom: 1px solid $light-blue;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: $light-grey;
+  }
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: $light-grey;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $light-blue;
+  }
+}
+
+.todoList__item {
+  width: 100%;
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  font-size: 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.todoList__item-header .todoList__item-elem {
+  background-color: $light-blue;
+}
+
+.todoList__item-header {
+
+  & .todoList__item-id,
+  & .todoList__item-text,
+  .todoList__item-remove {
+    color: $white;
+    padding: 8px 0;
+    text-align: center;
+    transition: .15s opacity ease-in-out;
+
+    &:hover {
+      opacity: .8;
+      cursor: pointer;
+    }
+  }
+}
+
+.todoList__item-elem {
+  display: inline-block;
+  font-size: 15px;
+  vertical-align: middle;
+}
+
+.todoList__item-text {
+  width: calc(100% - 80px);
+}
+
+.todoList__item-id,
+.todoList__item-remove {
+  width: 30px;
+}
+
+.todoList__item-id {
+  margin-right: 5px;
+  word-break: break-all;
+  text-align: center;
+}
+
+.todoList__item-remove {
+  margin-left: 5px;
+}
+
+@media screen and (max-width: 992px) {
+  :host {
+    max-height: initial;
+    margin: 30px 0;
+  }
+
+  .todoList {
+    max-height: initial;
+    padding-right: 0;
+  }
+}

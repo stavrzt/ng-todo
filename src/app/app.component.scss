@@ -1,0 +1,26 @@
+@import './app.colors';
+
+:host {
+  background-color: $light-yellow;
+  max-height: 80vh;
+  width: 90%;
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 40px 20px 30px;
+  color: $light-blue;
+  -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, .4);
+  -moz-box-shadow: 0 0 4px 0 rgba(0, 0, 0, .4);
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, .4);
+}
+
+h1 {
+  color: $pink;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 992px) {
+  :host {
+    max-height: initial;
+  }
+}

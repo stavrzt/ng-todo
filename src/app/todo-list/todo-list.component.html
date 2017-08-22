@@ -1,0 +1,18 @@
+<form ngClass="addForm" (ngSubmit)="addTodo(todoText.value); todoText.value='';">
+    <input ngClass="addForm__input addForm__input-text" required #todoText>
+    <button ngClass="addForm__input addForm__input-submit">Add</button>
+</form>
+
+<div class="todoListWrap">
+    <div ngClass="todoList__item todoList__item-header">
+        <p ngClass="todoList__item-elem todoList__item-id" (click)="sortParameter='id'">Id</p>
+        <p ngClass="todoList__item-elem todoList__item-text" (click)="sortParameter='text'">Text</p>
+    </div>
+    <ul ngClass="todoList">
+        <li ngClass="todoList__item" *ngFor="let todo of todos | sortTodos: sortParameter">
+            <p ngClass="todoList__item-elem todoList__item-id">{{todo.id}}</p>
+            <p ngClass="todoList__item-elem todoList__item-text">{{todo.text}}</p>
+            <button ngClass="todoList__item-elem todoList__item-remove" (click)="removeTodo(todo.text)">X</button>
+        </li>
+    </ul>
+</div>
